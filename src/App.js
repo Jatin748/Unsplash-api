@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext } from 'react';
+import Header from './components/Header';
+import Images from './components/Images';
+import Useaxios from './hooks/Useaxios';
+import Search from './components/Search';
+export const imagecontext = createContext();
 
 function App() {
+  const accesskey = '3PrABqr4uRVEmQdTTTf4HKFTKtBhzjxT2r2CjHTEfaE';
+  const { response, isloading, error, fetchData } = Useaxios(`search/photos?per_page=50&query=cat&client_id=${accesskey}&count=30`);
+  console.log(response);
+
+  const value = {
+    response,
+    isloading,
+    error,
+    fetchData,
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <imagecontext.Provider value={value}>
+      <Header>
+        <Search />
+      </Header>
+      <Images />
+    </imagecontext.Provider>
   );
 }
 
