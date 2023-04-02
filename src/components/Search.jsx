@@ -24,7 +24,7 @@ const Search = () => {
     }
   };
   return (
-    <div className="flex px-3 justify-center">
+    <div className="flex px-3 justify-center font-rubik">
       <input
         type="search"
         className="bg-gray-50 border border-gray-300 text-sm indent-2 p-2.5 outline-none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl w-72"
@@ -34,7 +34,7 @@ const Search = () => {
         onKeyDown={handleentersearch}
       />
       <button
-        className="text-white bg-orange-600 px-6 py-2.5 rounded-tr rounded-br focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400"
+        className="text-white bg-orange-600 px-6 py-2.5 rounded-tr rounded-br focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400 "
         onClick={handlebuttonsearch}
         disabled={!searchvalue}
       >
