@@ -4,7 +4,7 @@ const Header = ({ children }) => {
   return (
     <div className="bg-gray-900 py-5 font-rubik">
       <div>
-        <h1 className="text-white text-center text-xl font-bold mb-5 uppercase">
+        <h1 className="text-white text-center text-lg font-bold p-2 uppercase">
           Search Images with unsplash API
         </h1>
         <span className="text-white flex justify-center m-5 uppercase">
